@@ -8,10 +8,26 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let addTaskButton = UIButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        setupButton()
+        view.backgroundColor = .black
+    }
+    
+    func setupButton() {
+        view.addSubview(addTaskButton)
+        addTaskButton.configuration = .filled()
+        addTaskButton.configuration?.title = "+"
+        
+        addTaskButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            addTaskButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            addTaskButton.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
     }
 
 
